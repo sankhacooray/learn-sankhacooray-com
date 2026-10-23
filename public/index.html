@@ -44,7 +44,7 @@
   --text:#18233d; --dim:#4a5570; --muted:#7c8399;
   --accent:#2f56c9; --accent-hi:#4569d8; --accent-soft:#2f56c914; --mark:#f2c94c;
   --bar:#16213a; --bar-text:#eef1f8; --bar-dim:#a9b3cc;
-  --cta-text:#ffffff; --mine:#2f56c9; --co:#5b7fe0; --contrib:#7c8399;
+  --cta-text:#ffffff; --card-hover:#f1f3fb; --mine:#2f56c9; --co:#5b7fe0; --contrib:#7c8399;
   --android:#2e8b57; --cli:#9a5b00;
   --serif:"Instrument Serif",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   --page-bg:#f7f5ef; --maxw:1180px;
@@ -54,13 +54,13 @@
   --text:#e8ecf6; --dim:#b3bdd6; --muted:#8590ad;
   --accent:#7d9cff; --accent-hi:#97b0ff; --accent-soft:#7d9cff1f; --mark:#e9c25a;
   --bar:#0a0f1c; --bar-text:#e8ecf6; --bar-dim:#8d98b5;
-  --cta-text:#0a0f1c; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}}
+  --cta-text:#0a0f1c; --card-hover:#1a2440; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0e1424; --surface:#151d31; --surface2:#1b2540; --line:#26314e;
   --text:#e8ecf6; --dim:#b3bdd6; --muted:#8590ad;
   --accent:#7d9cff; --accent-hi:#97b0ff; --accent-soft:#7d9cff1f; --mark:#e9c25a;
   --bar:#0a0f1c; --bar-text:#e8ecf6; --bar-dim:#8d98b5;
-  --cta-text:#0a0f1c; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}
+  --cta-text:#0a0f1c; --card-hover:#1a2440; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}
 
 /* rule 14: body is the scroller, no bounce, no white edge */
 html{height:100%;overflow:hidden;background:var(--page-bg);overscroll-behavior:none}
@@ -70,7 +70,7 @@ a{color:inherit}
 
 /* app bar (rule 7: no bottom border) */
 .topbar{position:sticky;top:0;z-index:20;background:var(--bar);color:var(--bar-text);padding-top:env(safe-area-inset-top,0px)}
-.topbar .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.topbar .wrap{max-width:none;display:flex;align-items:center;gap:18px;height:60px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 .brand{display:flex;align-items:baseline;gap:2px;text-decoration:none;font-family:var(--mono);font-size:15px}
 .brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;margin-right:1px}
 .brand span{color:var(--bar-dim)}
@@ -120,8 +120,9 @@ h1 .dot{color:var(--accent)}
 .ctx .n{color:var(--text)}
 
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
-.card{display:flex;flex-direction:column;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px #0000000d,0 10px 28px -20px #0b153566,inset 0 0 0 1px var(--line);transition:box-shadow .15s}
-.card:hover{box-shadow:0 1px 2px #0000000d,0 16px 34px -18px #0b153580,inset 0 0 0 1px var(--accent)}
+.card{display:flex;flex-direction:column;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px #0000000d,0 10px 28px -20px #0b153566,inset 0 0 0 1px var(--line);transition:background-color .2s}
+.card:hover{background:var(--card-hover)}
+.card:hover .art.blank{background:linear-gradient(140deg,var(--accent-soft),transparent 70%),var(--card-hover)}
 .art{aspect-ratio:16/10;background:var(--surface2);position:relative;overflow:hidden}
 .art img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 .art.blank{display:grid;place-items:center;background:linear-gradient(140deg,var(--accent-soft),transparent 70%),var(--surface2)}
@@ -188,7 +189,7 @@ h1 .dot{color:var(--accent)}
   <nav class="nav" aria-label="Sections"><a href="#science">Science</a><a href="#spark">Microlearning</a><a href="#content">AI content</a><a href="#children">Children</a><a href="#ice">ICE</a><a href="#connect">NUS</a></nav>
   <div class="spacer"></div>
   <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
-  <a class="cta" href="https://sankhacooray.com/#contact"><span>Talk<span class="long"> learning</span> research</span></a>
+  <a class="cta" href="https://sankhacooray.com/#contact"><span>Collaborate<span class="long"> on learning research</span></span></a>
 </div></header>
 
 <main id="home">
