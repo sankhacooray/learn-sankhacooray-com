@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#16213a"/>
+  <!-- open book inside the central 60% (maskable safe zone) -->
+  <g fill="none" stroke="#eef1f8" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M256 186c-34-24-78-30-118-24v164c40-6 84 0 118 24"/>
+    <path d="M256 186c34-24 78-30 118-24v164c-40-6-84 0-118 24"/>
+    <path d="M256 186v164"/>
+  </g>
+  <circle cx="374" cy="150" r="22" fill="#f2c94c"/>
+</svg>

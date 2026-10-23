@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "learn · Sankha Cooray",
+  "short_name": "learn",
+  "description": "Learning projects by Sankha Cooray: Kiwrious science sensors, SPARK microlearning at NUS CHILL, Scratch GPT for children, and design-thinking programmes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#16213a",
+  "background_color": "#f7f5ef",
+  "lang": "en",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

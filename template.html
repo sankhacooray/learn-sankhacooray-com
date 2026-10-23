@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>learn — Sankha Cooray · education & learning</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="https://learn.sankhacooray.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="learn · Sankha Cooray">
+<meta property="og:title" content="learn — Sankha Cooray · education & learning">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="https://learn.sankhacooray.com/">
+<meta property="og:image" content="https://learn.sankhacooray.com/og.png?v=1">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="learn.sankhacooray.com: education and learning projects, with screenshots of SPARK, Kiwrious, Scratch GPT and Design Thinking @ SL">
+<meta property="og:locale" content="en_SG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="learn — Sankha Cooray · education & learning">
+<meta name="twitter:description" content="{{DESC}}">
+<meta name="twitter:image" content="https://learn.sankhacooray.com/og.png?v=1">
+<meta name="twitter:image:alt" content="learn.sankhacooray.com: education and learning projects, with screenshots of SPARK, Kiwrious, Scratch GPT and Design Thinking @ SL">
+
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#16213a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="learn">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem("sc-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+/* Ink-and-paper palette: ink-blue app bar, paper page, one ink-blue accent, a highlighter mark used sparingly */
+:root{
+  --bg:#f7f5ef; --surface:#ffffff; --surface2:#efece2; --line:#e2ddcf;
+  --text:#18233d; --dim:#4a5570; --muted:#7c8399;
+  --accent:#2f56c9; --accent-hi:#4569d8; --accent-soft:#2f56c914; --mark:#f2c94c;
+  --bar:#16213a; --bar-text:#eef1f8; --bar-dim:#a9b3cc;
+  --cta-text:#ffffff; --mine:#2f56c9; --co:#5b7fe0; --contrib:#7c8399;
+  --android:#2e8b57; --cli:#9a5b00;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --page-bg:#f7f5ef; --maxw:1180px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1424; --surface:#151d31; --surface2:#1b2540; --line:#26314e;
+  --text:#e8ecf6; --dim:#b3bdd6; --muted:#8590ad;
+  --accent:#7d9cff; --accent-hi:#97b0ff; --accent-soft:#7d9cff1f; --mark:#e9c25a;
+  --bar:#0a0f1c; --bar-text:#e8ecf6; --bar-dim:#8d98b5;
+  --cta-text:#0a0f1c; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1424; --surface:#151d31; --surface2:#1b2540; --line:#26314e;
+  --text:#e8ecf6; --dim:#b3bdd6; --muted:#8590ad;
+  --accent:#7d9cff; --accent-hi:#97b0ff; --accent-soft:#7d9cff1f; --mark:#e9c25a;
+  --bar:#0a0f1c; --bar-text:#e8ecf6; --bar-dim:#8d98b5;
+  --cta-text:#0a0f1c; --mine:#7d9cff; --co:#5b7fe0; --contrib:#6c7592; --android:#5fcf8f; --cli:#e9ad55; --page-bg:#0e1424; color-scheme:dark}
+
+/* rule 14: body is the scroller, no bounce, no white edge */
+html{height:100%;overflow:hidden;background:var(--page-bg);overscroll-behavior:none}
+body{height:100%;margin:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:none;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* app bar (rule 7: no bottom border) */
+.topbar{position:sticky;top:0;z-index:20;background:var(--bar);color:var(--bar-text);padding-top:env(safe-area-inset-top,0px)}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{display:flex;align-items:baseline;gap:2px;text-decoration:none;font-family:var(--mono);font-size:15px}
+.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;margin-right:1px}
+.brand span{color:var(--bar-dim)}
+.nav{display:flex;gap:4px;margin-left:12px}
+.nav a{color:var(--bar-dim);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px}
+.nav a:hover{color:var(--bar-text);background:#ffffff14}
+.spacer{flex:1}
+.iconbtn{all:unset;cursor:pointer;width:36px;height:36px;border-radius:999px;display:grid;place-items:center;color:var(--bar-dim)}
+.iconbtn:hover{color:var(--bar-text);background:#ffffff14}
+.iconbtn:focus-visible,.cta:focus-visible,.card a:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+/* rule 10/12: one primary CTA, theme colour, named for the task */
+.cta{display:inline-flex;align-items:center;gap:0;background:var(--accent);color:var(--cta-text);text-decoration:none;font-weight:600;font-size:14px;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:background .15s,box-shadow .15s}
+.cta:hover{background:var(--accent-hi);box-shadow:0 0 0 4px var(--accent-soft),0 6px 20px -6px var(--accent)}
+
+/* groups (rules 1, 4, 5) */
+main{display:block}
+.group{box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(18px,3.4vh,48px);scroll-margin-top:var(--bar-h,60px)}
+.group > .wrap{width:100%;box-sizing:border-box}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(64px,13vh,132px);line-height:.92;margin:.08em 0 .05em;letter-spacing:-.02em}
+h1 .dot{color:var(--accent)}
+.sub{font-family:var(--serif);font-size:clamp(26px,4.2vh,40px);line-height:1.15;margin:0;color:var(--dim)}
+.lede{font-size:clamp(16px,2.25vh,19px);color:var(--dim);max-width:58ch;margin:clamp(12px,2.2vh,22px) 0 0}
+.role-line{font-size:14.5px;color:var(--muted);max-width:60ch;margin-top:10px}
+.role-line b{color:var(--text);font-weight:600}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(14px,2.6vh,26px)}
+.stat{font-size:13.5px;padding:5px 12px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--dim)}
+.stat b{color:var(--text);font-variant-numeric:tabular-nums}
+
+.hero > *{min-width:0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.shot{margin:0;border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 1px 2px #0000000d,0 14px 34px -18px #0b153580;aspect-ratio:16/10}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+/* rule 6/16: the SPARK pipeline, one line */
+.strip{display:flex;flex-wrap:nowrap;align-items:stretch;gap:8px;margin-top:clamp(16px,3vh,30px)}
+.step{flex:1 1 auto;min-width:max-content;justify-content:center;display:flex;align-items:center;gap:8px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:7px 12px;font-size:13.5px;white-space:nowrap}
+.step svg{width:16px;height:16px;flex:none;color:var(--accent)}
+.step span{overflow:hidden;text-overflow:ellipsis}
+.arrow{align-self:center;color:var(--muted);flex:none}
+.strip-cap{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+.ghead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:end;margin-bottom:clamp(14px,2.6vh,26px)}
+.ghead h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vh,46px);line-height:1.05;margin:0}
+.ghead p{margin:6px 0 0;color:var(--dim);max-width:62ch;font-size:clamp(15px,2.1vh,17.5px)}
+.ctx{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.ctx .n{color:var(--text)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px #0000000d,0 10px 28px -20px #0b153566,inset 0 0 0 1px var(--line);transition:box-shadow .15s}
+.card:hover{box-shadow:0 1px 2px #0000000d,0 16px 34px -18px #0b153580,inset 0 0 0 1px var(--accent)}
+.art{aspect-ratio:16/10;background:var(--surface2);position:relative;overflow:hidden}
+.art img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.art.blank{display:grid;place-items:center;background:linear-gradient(140deg,var(--accent-soft),transparent 70%),var(--surface2)}
+.art.blank svg{width:clamp(44px,8vh,72px);height:auto;color:var(--accent);opacity:.75}
+.cbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ctop{display:flex;align-items:center;gap:8px}
+.card h3{margin:0;font-size:16.5px;font-weight:600;line-height:1.25}
+.role{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.role.mine{background:var(--accent);color:var(--cta-text)}
+.role.co{background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.role.contrib{background:var(--surface2);color:var(--dim)}
+.card p{margin:0;color:var(--dim);font-size:14.5px;line-height:1.5}
+.cfoot{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.plats{display:inline-flex;gap:4px}
+.pi{width:14px;height:14px}
+.pi-android{color:var(--android)}.pi-web{color:var(--accent)}.pi-ios{color:var(--text)}
+.org{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.open{margin-left:auto;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
+.open:hover{text-decoration:underline}
+
+.connect{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.panel{background:var(--surface);border-radius:14px;padding:clamp(16px,3vh,26px) 22px;box-shadow:inset 0 0 0 1px var(--line)}
+.panel h3{margin:0 0 4px;font-size:15px;font-weight:600}
+.panel .hint{margin:0 0 12px;font-size:13.5px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13.5px;padding:5px 12px;border-radius:999px;line-height:1.3}
+.chip.core{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.chip.rel{box-shadow:inset 0 0 0 1px var(--line);color:var(--dim)}
+.chip.ven{font-family:var(--mono);font-size:13px;background:var(--surface2);color:var(--dim);cursor:help}
+.chip.ven.ok{background:var(--accent-soft);color:var(--accent)}
+.chip.ven.ok::before{content:"✓ "}
+
+/* rules 5, 18: footer, one line, pinned to the bottom of the last screen */
+.last{justify-content:flex-start}
+.last > .wrap:first-child{margin-top:auto}
+.footer{margin-top:auto;padding-top:clamp(18px,4vh,40px)}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;font-size:13.5px;color:var(--muted)}
+.footer a{text-decoration:none;color:var(--dim)}
+.footer a:hover{color:var(--accent)}
+.info{all:unset;cursor:help;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;box-shadow:inset 0 0 0 1px var(--line);color:var(--dim);position:relative;z-index:41}
+.glass{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s;pointer-events:none;padding:24px}
+.glass.on{opacity:1;visibility:visible}
+.glass .msg{max-width:52ch;font-size:17px;line-height:1.6;color:var(--text);text-align:left}
+.glass .msg b{font-weight:600}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .connect{grid-template-columns:minmax(0,1fr)}
+  .ghead{grid-template-columns:minmax(0,1fr)}
+  .strip{overflow-x:auto;scrollbar-width:none}
+  .step{flex:0 0 auto}
+}
+@media (max-width:520px){
+  .cta .long{display:none}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="/"><b>learn</b><span>.sankhacooray.com</span></a>
+  <nav class="nav" aria-label="Sections">{{NAV}}</nav>
+  <div class="spacer"></div>
+  <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+  <a class="cta" href="https://sankhacooray.com/#contact"><span>Talk<span class="long"> learning</span> research</span></a>
+</div></header>
+
+<main id="home">
+  <section class="group" data-solo id="top"><div class="wrap hero">
+    <div>
+      <div class="eyebrow">A research hub by Sankha Cooray</div>
+      <h1>learn<span class="dot">.</span></h1>
+      <p class="sub">Education &amp; learning</p>
+      <p class="lede">Tools for how people learn: sensors that make science visible in class, microlearning that fits a working day, AI that writes Scratch for children, and design-thinking programmes in Sri Lanka.</p>
+      <p class="role-line">Much of this is team work. I <b>contribute</b> to SPARK at NUS CHILL and to Kiwrious at the Augmented Human Lab, I <b>co-own</b> Kiwrious and the ICE programme sites, and Scratch GPT is <b>mine</b>.</p>
+      <div class="stats">{{STATS}}</div>
+    </div>
+    <div>
+      <div class="collage">
+        <figure class="shot"><img src="/thumbs/spark.jpg" alt="SPARK microlearning site" width="800" height="500"></figure>
+        <figure class="shot"><img src="/thumbs/kiwrious.jpg" alt="Kiwrious science sensors site" width="800" height="500"></figure>
+        <figure class="shot"><img src="/thumbs/scratchgpt.jpg" alt="Scratch GPT" width="800" height="500"></figure>
+        <figure class="shot"><img src="/thumbs/designthinking.jpg" alt="Design Thinking @ SL" width="800" height="500"></figure>
+      </div>
+      <div class="strip" aria-label="How SPARK turns a lecture into microlearning">
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Slides</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 9l3 2-3 2z" fill="currentColor"/></svg><span>AI video</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/></svg><span>SPARK app</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19l5-6 4 3 7-9"/></svg><span>Adaptive quiz</span></div>
+      </div>
+      <div class="strip-cap">How SPARK turns a lecture into microlearning</div>
+    </div>
+  </div></section>
+
+{{GROUPS}}
+
+  <section class="group last" id="connect">
+    <div class="wrap">
+      <div class="ghead"><div><h2>Where this connects</h2><p>The NUS units this work sits closest to, and the venues it publishes in.</p></div></div>
+      <div class="connect">
+        <div class="panel"><h3>At NUS</h3><p class="hint">Core homes first, then related departments.</p><div class="chips">{{NUS}}</div></div>
+        <div class="panel"><h3>Where to publish</h3><p class="hint">✓ marks venues on an NUS department's recognised list.</p><div class="chips">{{VENUES}}</div></div>
+      </div>
+    </div>
+    <footer class="footer"><div class="wrap">
+      <span>learn · a research hub by Sankha Cooray</span>
+      <a href="https://sankhacooray.com">sankhacooray.com</a>
+      <a href="https://github.com/sankhacooray/learn-sankhacooray-com">Source</a>
+      <button class="info" id="roles-info" type="button" aria-label="What Mine, Co-owned and Contributed mean" aria-describedby="roles-msg">i</button>
+    </div></footer>
+  </section>
+</main>
+
+<div class="glass" id="glass" role="tooltip"><div class="msg" id="roles-msg"><b>Mine</b>: I built and run it. <b>Co-owned</b>: I share ownership of the project with others. <b>Contributed</b>: the project belongs to another team or organisation (NUS CHILL, the Augmented Human Lab, or a colleague), and I worked on it. Some projects are private repositories, so only live sites are linked.</div></div>
+
+<script>
+/* screen-fit + ↑/↓ paging (ui-ux-style rules 1, 2) */
+(function(){
+  var scroller=document.body,topbar=document.querySelector(".topbar"),root=document.getElementById("home");
+  function barH(){return topbar?topbar.offsetHeight:0}
+  if(topbar&&window.ResizeObserver)new ResizeObserver(function(){document.documentElement.style.setProperty("--bar-h",barH()+"px")}).observe(topbar);
+  function layout(){
+    var gs=[].slice.call(root.querySelectorAll(".group")),avail=scroller.clientHeight-barH();
+    gs.forEach(function(g){g.style.minHeight=""});
+    if(window.innerWidth<=900){gs.forEach(function(g,i){g.classList.toggle("screen",true)});return}
+    var hs=gs.map(function(g){return g.getBoundingClientRect().height}),screens=[],cur=null;
+    gs.forEach(function(g,i){var solo=g.hasAttribute("data-solo")||(cur&&cur.solo);
+      if(cur&&!solo&&cur.sum+hs[i]<=avail+1){cur.items.push(i);cur.sum+=hs[i]}else{cur={items:[i],sum:hs[i],solo:g.hasAttribute("data-solo")};screens.push(cur)}});
+    screens.forEach(function(sc){var extra=Math.max(0,avail-sc.sum)/sc.items.length;sc.items.forEach(function(i,k){gs[i].style.minHeight=(hs[i]+extra)+"px";gs[i].classList.toggle("screen",k===0)})});
+  }
+  var raf=0;function relayout(){cancelAnimationFrame(raf);raf=requestAnimationFrame(layout)}
+  if(window.ResizeObserver)new ResizeObserver(relayout).observe(scroller);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(relayout);
+  window.addEventListener("load",relayout);relayout();
+  var target=null;scroller.addEventListener("scrollend",function(){target=null});
+  function stops(){return [].map.call(root.querySelectorAll(".screen"),function(s){return Math.round(s.getBoundingClientRect().top+scroller.scrollTop-barH())})}
+  function pageBy(dir){var pos=target!=null?target:scroller.scrollTop,step=scroller.clientHeight-barH(),max=scroller.scrollHeight-scroller.clientHeight,s=stops(),dest;
+    if(dir>0){var nx=s.filter(function(t){return t>pos+4})[0];dest=Math.min(nx!=null?nx:max,pos+step)}else{var pv=s.filter(function(t){return t<pos-4}).pop();dest=Math.max(pv!=null?pv:0,pos-step)}
+    dest=Math.min(Math.max(dest,0),max);if(dest===Math.round(pos))return;target=dest;scroller.scrollTo({top:dest,behavior:"smooth"})}
+  document.addEventListener("keydown",function(e){if(e.key!=="ArrowDown"&&e.key!=="ArrowUp")return;if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    var t=e.target instanceof Element?e.target:null;if(t&&t.closest("input,textarea,select,[contenteditable]"))return;e.preventDefault();pageBy(e.key==="ArrowDown"?1:-1)});
+  /* in-page nav scrolls the body scroller */
+  document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var el=document.querySelector(a.getAttribute("href"));if(!el)return;e.preventDefault();scroller.scrollTo({top:el.getBoundingClientRect().top+scroller.scrollTop-barH(),behavior:"smooth"})});
+})();
+/* ⓘ: full-screen frosted note while hovering; tap toggles on touch (rule 18) */
+(function(){
+  var b=document.getElementById("roles-info"),g=document.getElementById("glass");if(!b||!g)return;
+  function on(){g.classList.add("on")}function off(){g.classList.remove("on")}
+  b.addEventListener("mouseenter",on);b.addEventListener("mouseleave",off);b.addEventListener("focus",on);b.addEventListener("blur",off);
+  b.addEventListener("click",function(e){e.stopPropagation();g.classList.toggle("on")});
+  document.addEventListener("click",function(e){if(e.target!==b)off()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")off()});
+})();
+/* theme toggle shared with the sankhacooray.com family */
+(function(){var r=document.documentElement,K="sc-theme",mq=window.matchMedia("(prefers-color-scheme: dark)");function eff(){try{var s=localStorage.getItem(K);if(s==="light"||s==="dark")return s}catch(e){}return mq.matches?"dark":"light"}
+  var b=document.getElementById("theme-toggle");if(b)b.addEventListener("click",function(){var n=eff()==="dark"?"light":"dark";try{localStorage.setItem(K,n)}catch(e){}r.setAttribute("data-theme",n)})})();
+</script>
+<script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
+</body>
+</html>
