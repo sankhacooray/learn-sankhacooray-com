@@ -86,6 +86,10 @@ a{color:inherit}
 .spacer{flex:1}
 .iconbtn{all:unset;cursor:pointer;width:36px;height:36px;border-radius:999px;display:grid;place-items:center;color:var(--bar-dim)}
 .iconbtn:hover{color:var(--bar-text);background:#ffffff14}
+/* the toggle shows the theme it switches TO: moon on light, sun on dark */
+.ico-sun{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ico-sun{display:block}:root:not([data-theme="light"]) .ico-moon{display:none}}
+:root[data-theme="dark"] .ico-sun{display:block}:root[data-theme="dark"] .ico-moon{display:none}
 .iconbtn:focus-visible,.cta:focus-visible,.card a:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
 /* rule 10/12: one primary CTA, theme colour, named for the task */
 .cta{display:inline-flex;align-items:center;gap:0;background:var(--accent);color:var(--cta-text);text-decoration:none;font-weight:600;font-size:14px;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:background .15s,box-shadow .15s}
@@ -199,7 +203,7 @@ h1 .dot{color:var(--accent)}
   <a class="brand" href="/" aria-label="Learn, research topics"><span class="hubchip">Learn</span><span class="lbl">Research topics</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></a>
   <nav class="nav" aria-label="Sections">{{NAV}}</nav>
   <div class="spacer"></div>
-  <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+  <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme"><svg class="ico-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg><svg class="ico-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
   <a class="cta" href="https://sankhacooray.com/#contact"><span>Collaborate<span class="long"> on learning research</span></span></a>
 </div></header>
 
@@ -306,7 +310,10 @@ h1 .dot{color:var(--accent)}
 })();
 /* theme toggle shared with the sankhacooray.com family */
 (function(){var r=document.documentElement,K="sc-theme",mq=window.matchMedia("(prefers-color-scheme: dark)");function eff(){try{var s=localStorage.getItem(K);if(s==="light"||s==="dark")return s}catch(e){}return mq.matches?"dark":"light"}
-  var b=document.getElementById("theme-toggle");if(b)b.addEventListener("click",function(){var n=eff()==="dark"?"light":"dark";try{localStorage.setItem(K,n)}catch(e){}r.setAttribute("data-theme",n)})})();
+  var b=document.getElementById("theme-toggle");if(!b)return;
+  function label(){var l="Switch to "+(eff()==="dark"?"light":"dark")+" theme";b.setAttribute("aria-label",l);b.title=l}
+  label();if(mq.addEventListener)mq.addEventListener("change",label);
+  b.addEventListener("click",function(){var n=eff()==="dark"?"light":"dark";try{localStorage.setItem(K,n)}catch(e){}r.setAttribute("data-theme",n);label()})})();
 </script>
 <script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
 </body>
