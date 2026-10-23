@@ -11,7 +11,8 @@ The VS Code workspace for the hub and its projects is `../learn-sankhacooray-com
 
 | Path | Purpose |
 |------|---------|
-| `projects.json` | The hub's content: research areas, projects, roles, live links, NUS units, venues |
+| `projects.json` | The hub's content: research areas, projects, roles, live links |
+| `footer.html` | One-line footer, placed in the last section |
 | `template.html` | Page template (CSS + JS inline) |
 | `build.py` | Renders `public/index.html` from the two files above, as static HTML for crawlers |
 | `public/thumbs/` | Screenshots of the live sites, 800 px wide |

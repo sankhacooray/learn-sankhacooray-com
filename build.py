@@ -57,35 +57,33 @@ def card(p):
             f'<div class="cfoot"><span class="plats">{plats(p["plat"])}</span><span class="org">{e(p["org"])}</span>{link}</div></div></article>')
 
 
+FOOTER = open(os.path.join(HERE, "footer.html")).read()
 groups, nav = [], []
-for g in data["groups"]:
+for i, g in enumerate(data["groups"]):
     n = len(g["projects"])
+    last = i == len(data["groups"]) - 1
     groups.append(
-        f'  <section class="group" id="{g["id"]}"><div class="wrap">\n'
+        f'  <section class="group{" last" if last else ""}" id="{g["id"]}"><div class="wrap">\n'
         f'    <div class="ghead"><div><h2>{e(g["title"])}</h2><p>{e(g["lede"])}</p></div>'
         f'<div class="ctx">{e(g["context"])} · <span class="n">{n}</span> project{"s" if n != 1 else ""}</div></div>\n'
         f'    <div class="cards">{"".join(card(p) for p in g["projects"])}</div>\n'
-        f'  </div></section>')
+        f'  </div>\n{FOOTER if last else ""}  </section>')
 NAV = {"science": "Science", "spark": "Microlearning", "content": "AI content", "children": "Children", "ice": "ICE"}
 for g in data["groups"]:
     nav.append(f'<a href="#{g["id"]}">{NAV.get(g["id"], g["title"])}</a>')
-nav.append('<a href="#connect">NUS</a>')
 
 allp = [p for g in data["groups"] for p in g["projects"]]
 live = sum(1 for p in allp if p.get("url"))
 stats = (f'<span class="stat"><b>{len(allp)}</b> projects</span>'
          f'<span class="stat"><b>{len(data["groups"])}</b> research areas</span>'
          f'<span class="stat"><b>{live}</b> live links</span>')
-nus = "".join(f'<span class="chip core">{e(x)}</span>' for x in data["nus"]["core"]) + \
-      "".join(f'<span class="chip rel">{e(x)}</span>' for x in data["nus"]["related"])
-ven = "".join(f'<span class="chip ven{" ok" if ok else ""}" title="{e(full)}">{e(s)}</span>' for s, full, ok in data["venues"])
 
 desc = ("Learning projects by Sankha Cooray: Kiwrious science sensors, SPARK microlearning at NUS CHILL, "
         "Scratch GPT for children, and design-thinking programmes.")
 assert 120 <= len(desc) <= 160, len(desc)
 
 out = (tpl.replace("{{GROUPS}}", "\n".join(groups)).replace("{{NAV}}", "".join(nav))
-       .replace("{{STATS}}", stats).replace("{{NUS}}", nus).replace("{{VENUES}}", ven)
+       .replace("{{STATS}}", stats)
        .replace("{{DESC}}", e(desc)))
 os.makedirs(os.path.join(HERE, "public"), exist_ok=True)
 open(os.path.join(HERE, "public", "index.html"), "w").write(out)

@@ -11,10 +11,41 @@
       "lede": "USB sensors and software that let students measure the world around them, from air quality to UV.",
       "context": "Kiwrious",
       "projects": [
-        {"name": "Kiwrious", "desc": "Make science visible: the product site for Kiwrious sensors and tools.", "plat": ["web"], "role": "co", "org": "kiwrious", "thumb": "kiwrious.jpg"},
-        {"name": "Inquiry Editor", "desc": "Teachers build sensor-driven science inquiries for their class.", "plat": ["web"], "role": "contrib", "org": "Augmented Human Lab"},
-        {"name": "Inquiry API", "desc": "Backend for the Inquiry Editor: Fastify, Prisma and Postgres on Cloud Run.", "plat": [], "role": "contrib", "org": "Augmented Human Lab"},
-        {"name": "Kiwrious Play", "desc": "Games that react to live sensor readings.", "plat": ["web"], "role": "contrib", "org": "Augmented Human Lab"}
+        {
+          "name": "Kiwrious",
+          "desc": "Make science visible: the product site for Kiwrious sensors and tools.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "kiwrious",
+          "thumb": "kiwrious.jpg"
+        },
+        {
+          "name": "Inquiry Editor",
+          "desc": "Teachers build sensor-driven science inquiries for their class.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "Augmented Human Lab"
+        },
+        {
+          "name": "Inquiry API",
+          "desc": "Backend for the Inquiry Editor: Fastify, Prisma and Postgres on Cloud Run.",
+          "plat": [],
+          "role": "contrib",
+          "org": "Augmented Human Lab"
+        },
+        {
+          "name": "Kiwrious Play",
+          "desc": "Games that react to live sensor readings.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "Augmented Human Lab"
+        }
       ]
     },
     {
@@ -23,10 +54,48 @@
       "lede": "SPARK turns dense course material into short, narrative micromodules for working adults.",
       "context": "NUS CHILL",
       "projects": [
-        {"name": "SPARK", "desc": "The microlearning platform from NUS CHILL, for learners, instructors and organisations.", "plat": ["web"], "role": "contrib", "org": "NUS CHILL", "thumb": "spark.jpg", "url": "https://spark.nus.edu.sg/"},
-        {"name": "SPARK app", "desc": "The learner app for iPhone and Android.", "plat": ["ios", "android"], "role": "contrib", "org": "NUS CHILL", "url": "https://apps.apple.com/sg/app/chill-spark/id6760994921", "urlLabel": "App Store"},
-        {"name": "SPARK study app", "desc": "The mobile app behind the SPARK user study.", "plat": ["ios", "android"], "role": "contrib", "org": "NUS CHILL"},
-        {"name": "Adaptive quizzes", "desc": "CHILL's instructor–student platform, with quizzes that adapt to a learner model.", "plat": ["web"], "role": "contrib", "org": "NUS CHILL"}
+        {
+          "name": "SPARK",
+          "desc": "The microlearning platform from NUS CHILL, for learners, instructors and organisations.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "NUS CHILL",
+          "thumb": "spark.jpg",
+          "url": "https://spark.nus.edu.sg/"
+        },
+        {
+          "name": "SPARK app",
+          "desc": "The learner app for iPhone and Android.",
+          "plat": [
+            "ios",
+            "android"
+          ],
+          "role": "contrib",
+          "org": "NUS CHILL",
+          "url": "https://apps.apple.com/sg/app/chill-spark/id6760994921",
+          "urlLabel": "App Store"
+        },
+        {
+          "name": "SPARK study app",
+          "desc": "The mobile app behind the SPARK user study.",
+          "plat": [
+            "ios",
+            "android"
+          ],
+          "role": "contrib",
+          "org": "NUS CHILL"
+        },
+        {
+          "name": "Adaptive quizzes",
+          "desc": "CHILL's instructor–student platform, with quizzes that adapt to a learner model.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "NUS CHILL"
+        }
       ]
     },
     {
@@ -35,9 +104,29 @@
       "lede": "From a lecture deck to a short portrait video, with a presenter, in minutes.",
       "context": "NUS CHILL",
       "projects": [
-        {"name": "Slides to video", "desc": "Turns a PDF slide deck into a short portrait learning video with AI.", "plat": [], "role": "contrib", "org": "NUS CHILL"},
-        {"name": "Content package", "desc": "A full content package for one micro-video: script, scenes and assets.", "plat": [], "role": "contrib", "org": "NUS CHILL"},
-        {"name": "Presenter avatars", "desc": "Generates the on-screen presenter for each micro-video.", "plat": ["web"], "role": "contrib", "org": "NUS CHILL"}
+        {
+          "name": "Slides to video",
+          "desc": "Turns a PDF slide deck into a short portrait learning video with AI.",
+          "plat": [],
+          "role": "contrib",
+          "org": "NUS CHILL"
+        },
+        {
+          "name": "Content package",
+          "desc": "A full content package for one micro-video: script, scenes and assets.",
+          "plat": [],
+          "role": "contrib",
+          "org": "NUS CHILL"
+        },
+        {
+          "name": "Presenter avatars",
+          "desc": "Generates the on-screen presenter for each micro-video.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "NUS CHILL"
+        }
       ]
     },
     {
@@ -46,8 +135,26 @@
       "lede": "Children describe the program they want; Scratch GPT writes a project they can open and remix.",
       "context": "Scratch GPT",
       "projects": [
-        {"name": "Scratch GPT", "desc": "Describe a program in plain words and get a valid Scratch 3 project.", "plat": ["web"], "role": "mine", "org": "sankhacooray", "thumb": "scratchgpt.jpg", "url": "https://scratchgpt.sankhacooray.com/"},
-        {"name": "Scratch GPT backend", "desc": "The Apps Script service behind it, gated by Google sign-in.", "plat": ["web"], "role": "mine", "org": "sankhacooray"}
+        {
+          "name": "Scratch GPT",
+          "desc": "Describe a program in plain words and get a valid Scratch 3 project.",
+          "plat": [
+            "web"
+          ],
+          "role": "mine",
+          "org": "sankhacooray",
+          "thumb": "scratchgpt.jpg",
+          "url": "https://scratchgpt.sankhacooray.com/"
+        },
+        {
+          "name": "Scratch GPT backend",
+          "desc": "The Apps Script service behind it, gated by Google sign-in.",
+          "plat": [
+            "web"
+          ],
+          "role": "mine",
+          "org": "sankhacooray"
+        }
       ]
     },
     {
@@ -56,24 +163,47 @@
       "lede": "ICE (Innovation, Creativity & Entrepreneurship) runs design-thinking programmes for students in Sri Lanka.",
       "context": "ICE · Sri Lanka",
       "projects": [
-        {"name": "Design Thinking @ SL", "desc": "Where participants and mentors build profiles, form teams and manage their work.", "plat": ["web"], "role": "co", "org": "designthinking-lk", "thumb": "designthinking.jpg", "url": "https://designthinking.lk/"},
-        {"name": "ICE 2025", "desc": "The archive of the ICE 2025 programme.", "plat": ["web"], "role": "co", "org": "designthinking-lk", "thumb": "ice2025.jpg", "url": "https://ice2025.designthinking.lk/"},
-        {"name": "ICE Central", "desc": "API and web console for running ICE cohorts.", "plat": ["web"], "role": "co", "org": "designthinking-lk"},
-        {"name": "ICEHub", "desc": "Workshop collaboration: teams, mentors, announcements and real-time chat.", "plat": ["web"], "role": "contrib", "org": "Prasanth Sasikumar"}
+        {
+          "name": "Design Thinking @ SL",
+          "desc": "Where participants and mentors build profiles, form teams and manage their work.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "designthinking-lk",
+          "thumb": "designthinking.jpg",
+          "url": "https://designthinking.lk/"
+        },
+        {
+          "name": "ICE 2025",
+          "desc": "The archive of the ICE 2025 programme.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "designthinking-lk",
+          "thumb": "ice2025.jpg",
+          "url": "https://ice2025.designthinking.lk/"
+        },
+        {
+          "name": "ICE Central",
+          "desc": "API and web console for running ICE cohorts.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "designthinking-lk"
+        },
+        {
+          "name": "ICEHub",
+          "desc": "Workshop collaboration: teams, mentors, announcements and real-time chat.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "Prasanth Sasikumar"
+        }
       ]
     }
-  ],
-  "nus": {
-    "core": ["Centre for Holistic Inquiry into Lifelong Learning (CHILL)", "Centre for Teaching, Learning and Technology"],
-    "related": ["Computer Science", "Psychology", "NUS Enterprise", "NUS Business School"]
-  },
-  "venues": [
-    ["L@S", "ACM Learning at Scale", false],
-    ["AIED", "Artificial Intelligence in Education", false],
-    ["LAK", "Learning Analytics and Knowledge", false],
-    ["ICLS / CSCL", "International Society of the Learning Sciences", false],
-    ["SIGCSE", "ACM Technical Symposium on Computer Science Education", false],
-    ["IDC", "ACM Interaction Design and Children", true],
-    ["CHI", "ACM CHI Conference on Human Factors in Computing Systems", true]
   ]
 }
