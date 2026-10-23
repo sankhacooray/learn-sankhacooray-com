@@ -19,7 +19,8 @@
           ],
           "role": "co",
           "org": "kiwrious",
-          "thumb": "kiwrious.jpg"
+          "thumb": "kiwrious.jpg",
+          "years": "2020–2026"
         },
         {
           "name": "Inquiry Editor",
@@ -28,14 +29,16 @@
             "web"
           ],
           "role": "contrib",
-          "org": "Augmented Human Lab"
+          "org": "Augmented Human Lab",
+          "years": "2020–2026"
         },
         {
           "name": "Inquiry API",
           "desc": "Backend for the Inquiry Editor: Fastify, Prisma and Postgres on Cloud Run.",
           "plat": [],
           "role": "contrib",
-          "org": "Augmented Human Lab"
+          "org": "Augmented Human Lab",
+          "years": "2020–2026"
         },
         {
           "name": "Kiwrious Play",
@@ -44,7 +47,8 @@
             "web"
           ],
           "role": "contrib",
-          "org": "Augmented Human Lab"
+          "org": "Augmented Human Lab",
+          "years": "2021–2026"
         }
       ]
     },
@@ -63,7 +67,8 @@
           "role": "contrib",
           "org": "NUS CHILL",
           "thumb": "spark.jpg",
-          "url": "https://spark.nus.edu.sg/"
+          "url": "https://spark.nus.edu.sg/",
+          "years": "2026"
         },
         {
           "name": "SPARK app",
@@ -75,7 +80,8 @@
           "role": "contrib",
           "org": "NUS CHILL",
           "url": "https://apps.apple.com/sg/app/chill-spark/id6760994921",
-          "urlLabel": "App Store"
+          "urlLabel": "App Store",
+          "years": "2026"
         },
         {
           "name": "SPARK study app",
@@ -85,7 +91,8 @@
             "android"
           ],
           "role": "contrib",
-          "org": "NUS CHILL"
+          "org": "NUS CHILL",
+          "years": "2026"
         },
         {
           "name": "Adaptive quizzes",
@@ -94,7 +101,8 @@
             "web"
           ],
           "role": "contrib",
-          "org": "NUS CHILL"
+          "org": "NUS CHILL",
+          "years": "2025–2026"
         }
       ]
     },
@@ -109,14 +117,16 @@
           "desc": "Turns a PDF slide deck into a short portrait learning video with AI.",
           "plat": [],
           "role": "contrib",
-          "org": "NUS CHILL"
+          "org": "NUS CHILL",
+          "years": "2026"
         },
         {
           "name": "Content package",
           "desc": "A full content package for one micro-video: script, scenes and assets.",
           "plat": [],
           "role": "contrib",
-          "org": "NUS CHILL"
+          "org": "NUS CHILL",
+          "years": "2026"
         },
         {
           "name": "Presenter avatars",
@@ -125,7 +135,8 @@
             "web"
           ],
           "role": "contrib",
-          "org": "NUS CHILL"
+          "org": "NUS CHILL",
+          "years": "2026"
         }
       ]
     },
@@ -144,7 +155,8 @@
           "role": "mine",
           "org": "sankhacooray",
           "thumb": "scratchgpt.jpg",
-          "url": "https://scratchgpt.sankhacooray.com/"
+          "url": "https://scratchgpt.sankhacooray.com/",
+          "years": "2026"
         },
         {
           "name": "Scratch GPT backend",
@@ -153,7 +165,8 @@
             "web"
           ],
           "role": "mine",
-          "org": "sankhacooray"
+          "org": "sankhacooray",
+          "years": "2026"
         }
       ]
     },
@@ -172,7 +185,8 @@
           "role": "co",
           "org": "designthinking-lk",
           "thumb": "designthinking.jpg",
-          "url": "https://designthinking.lk/"
+          "url": "https://designthinking.lk/",
+          "years": "2026"
         },
         {
           "name": "ICE 2025",
@@ -183,7 +197,8 @@
           "role": "co",
           "org": "designthinking-lk",
           "thumb": "ice2025.jpg",
-          "url": "https://ice2025.designthinking.lk/"
+          "url": "https://ice2025.designthinking.lk/",
+          "years": "2025–2026"
         },
         {
           "name": "ICE Central",
@@ -192,7 +207,8 @@
             "web"
           ],
           "role": "co",
-          "org": "designthinking-lk"
+          "org": "designthinking-lk",
+          "years": "2026"
         },
         {
           "name": "ICEHub",
@@ -201,9 +217,11 @@
             "web"
           ],
           "role": "contrib",
-          "org": "Prasanth Sasikumar"
+          "org": "Prasanth Sasikumar",
+          "years": "2025–2026"
         }
       ]
     }
-  ]
+  ],
+  "yearsNote": "From each project's git history (first to last commit). Kiwrious Play counts only the Kiwrious team's commits on its Scratch fork; the Kiwrious product card spans all Kiwrious repos; ICE 2025 covers the 2025 programme and its 2026 archive; ICE Central has no repo, so its file dates are used."
 }

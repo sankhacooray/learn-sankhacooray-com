@@ -48,6 +48,8 @@ def card(p):
         art = f'<div class="art"><img src="/thumbs/{e(p["thumb"])}" alt="{e(p["name"])}" loading="lazy" width="800" height="500"></div>'
     else:
         art = f'<div class="art blank" aria-hidden="true">{KIND[kind(p)]}</div>'
+    if p.get("years"):
+        art = art.replace('">', f'"><span class="yrs" title="Active years, from the project\'s commit history">{e(p["years"])}</span>', 1)
     link = ""
     if p.get("url"):
         link = f'<a class="open" href="{e(p["url"])}" target="_blank" rel="noopener">{e(p.get("urlLabel", "Open"))}</a>'
