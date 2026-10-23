@@ -163,8 +163,8 @@ h1 .dot{color:var(--accent)}
 .footer a{text-decoration:none;color:var(--dim)}
 .footer a:hover{color:var(--accent)}
 .info{all:unset;cursor:help;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;box-shadow:inset 0 0 0 1px var(--line);color:var(--dim);position:relative;z-index:41}
-.glass{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s;pointer-events:none;padding:24px}
-.glass.on{opacity:1;visibility:visible}
+.glass{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;pointer-events:none;padding:24px}
+.glass.on{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
 .glass .msg{max-width:52ch;font-size:17px;line-height:1.6;color:var(--text);text-align:left}
 .glass .msg b{font-weight:600}
 
@@ -260,8 +260,11 @@ h1 .dot{color:var(--accent)}
 /* ⓘ: full-screen frosted note while hovering; tap toggles on touch (rule 18) */
 (function(){
   var b=document.getElementById("roles-info"),g=document.getElementById("glass");if(!b||!g)return;
-  function on(){g.classList.add("on")}function off(){g.classList.remove("on")}
-  b.addEventListener("mouseenter",on);b.addEventListener("mouseleave",off);b.addEventListener("focus",on);b.addEventListener("blur",off);
+  /* hover intent: open only after the pointer rests on the ⓘ, so passing over it does nothing */
+  var DELAY=400,timer=0;
+  function on(){clearTimeout(timer);g.classList.add("on")}function off(){clearTimeout(timer);g.classList.remove("on")}
+  function later(){clearTimeout(timer);timer=setTimeout(on,DELAY)}
+  b.addEventListener("mouseenter",later);b.addEventListener("mouseleave",off);b.addEventListener("focus",later);b.addEventListener("blur",off);
   b.addEventListener("click",function(e){e.stopPropagation();g.classList.toggle("on")});
   document.addEventListener("click",function(e){if(e.target!==b)off()});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")off()});
