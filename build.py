@@ -44,7 +44,10 @@ def initials(name):
 
 
 def card(p):
-    if p.get("thumb"):
+    if p.get("og"):
+        art = (f'<div class="art fallback" aria-hidden="true">{KIND[kind(p)]}'
+               f'<img class="live-og" data-og="{e(p["og"])}" alt="" width="1200" height="630"></div>')
+    elif p.get("thumb"):
         art = f'<div class="art"><img src="/thumbs/{e(p["thumb"])}" alt="{e(p["name"])}" loading="lazy" width="800" height="500"></div>'
     else:
         art = f'<div class="art blank" aria-hidden="true">{KIND[kind(p)]}</div>'

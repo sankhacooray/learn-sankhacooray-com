@@ -19,8 +19,8 @@
           ],
           "role": "co",
           "org": "kiwrious",
-          "thumb": "kiwrious.jpg",
-          "years": "2020–2026"
+          "years": "2020–2026",
+          "og": "https://kiwrious.com/"
         },
         {
           "name": "Inquiry Editor",
@@ -154,9 +154,9 @@
           ],
           "role": "mine",
           "org": "sankhacooray",
-          "thumb": "scratchgpt.jpg",
           "url": "https://scratchgpt.sankhacooray.com/",
-          "years": "2026"
+          "years": "2026",
+          "og": "https://scratchgpt.sankhacooray.com/"
         },
         {
           "name": "Scratch GPT backend",
@@ -184,9 +184,9 @@
           ],
           "role": "co",
           "org": "designthinking-lk",
-          "thumb": "designthinking.jpg",
           "url": "https://designthinking.lk/",
-          "years": "2026"
+          "years": "2026",
+          "og": "https://designthinking.lk/"
         },
         {
           "name": "ICE 2025",
@@ -223,5 +223,6 @@
       ]
     }
   ],
-  "yearsNote": "From each project's git history (first to last commit). Kiwrious Play counts only the Kiwrious team's commits on its Scratch fork; the Kiwrious product card spans all Kiwrious repos; ICE 2025 covers the 2025 programme and its 2026 archive; ICE Central has no repo, so its file dates are used."
+  "yearsNote": "From each project's git history (first to last commit). Kiwrious Play counts only the Kiwrious team's commits on its Scratch fork; the Kiwrious product card spans all Kiwrious repos; ICE 2025 covers the 2025 programme and its 2026 archive; ICE Central has no repo, so its file dates are used.",
+  "thumbsNote": "Cards with an `og` page load that page's current og:image live through the Worker (/api/og), over a shared fallback image. SPARK's og:image is only its logo and ICE 2025 has none, so they keep screenshots. kiwrious.com is down, so its card shows the fallback until the site is back."
 }

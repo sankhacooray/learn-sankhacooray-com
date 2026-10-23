@@ -4,7 +4,9 @@
 sankhacooray.com network: Kiwrious science sensors, SPARK microlearning at NUS CHILL, Scratch GPT for
 children, and the ICE design-thinking programmes.
 
-Served by a Cloudflare Worker (static assets only), the same setup as `aimeter` and `cook`.
+Served by a Cloudflare Worker: static assets from `public/`, plus `src/worker.js`, whose `/api/og?url=` route
+fetches a project site's current `og:image` (allowlisted hosts only, cached 1 h). Cards with an `og` page in
+`projects.json` show a shared fallback, then fade to that live image.
 The VS Code workspace for the hub and its projects is `../learn-sankhacooray-com.code-workspace`.
 
 ## Files
@@ -18,6 +20,7 @@ The VS Code workspace for the hub and its projects is `../learn-sankhacooray-com
 | `public/thumbs/` | Screenshots of the live sites, 800 px wide |
 | `public/og.png` | 1200×630 share image, rendered from `og/og.html` |
 | `public/icon*.png`, `icon.svg`, `apple-touch-icon.png`, `manifest.webmanifest` | Icons + PWA manifest |
+| `src/worker.js` | Serves assets; `/api/og` live share-image proxy |
 | `wrangler.toml` | Worker config + custom domain (creates the DNS record) |
 
 Roles on each card: **Mine** (I built and run it), **Co-owned** (shared ownership),
