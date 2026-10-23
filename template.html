@@ -71,10 +71,12 @@ a{color:inherit}
 /* app bar (rule 7: no bottom border) */
 .topbar{position:sticky;top:0;z-index:20;background:var(--bar);color:var(--bar-text);padding-top:env(safe-area-inset-top,0px)}
 .topbar .wrap{max-width:none;display:flex;align-items:center;gap:18px;height:60px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-.brand{display:flex;align-items:baseline;gap:2px;text-decoration:none;font-family:var(--mono);font-size:15px}
-.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;margin-right:1px}
-.brand span{color:var(--bar-dim)}
-.nav{display:flex;gap:4px;margin-left:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--bar-text)}
+.hubchip{font-family:var(--serif);font-size:22px;line-height:1;padding:5px 14px 6px;border-radius:999px;background:var(--mark);color:#16213a;letter-spacing:.01em}
+.brand .lbl{font-size:14.5px;font-weight:500;color:var(--bar-text)}
+.chev{width:18px;height:18px;color:var(--bar-dim)}
+.nav{margin-left:2px}
+.nav{display:flex;gap:4px}
 .nav a{color:var(--bar-dim);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px}
 .nav a:hover{color:var(--bar-text);background:#ffffff14}
 .spacer{flex:1}
@@ -169,7 +171,7 @@ h1 .dot{color:var(--accent)}
 .glass .msg b{font-weight:600}
 
 @media (max-width:900px){
-  .nav{display:none}
+  .nav,.brand .lbl,.chev{display:none}
   .hero{grid-template-columns:minmax(0,1fr)}
   .connect{grid-template-columns:minmax(0,1fr)}
   .ghead{grid-template-columns:minmax(0,1fr)}
@@ -178,14 +180,13 @@ h1 .dot{color:var(--accent)}
 }
 @media (max-width:520px){
   .cta .long{display:none}
-  .brand span{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap">
-  <a class="brand" href="/"><b>learn</b><span>.sankhacooray.com</span></a>
+  <a class="brand" href="/" aria-label="Learn, research topics"><span class="hubchip">Learn</span><span class="lbl">Research topics</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></a>
   <nav class="nav" aria-label="Sections">{{NAV}}</nav>
   <div class="spacer"></div>
   <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
