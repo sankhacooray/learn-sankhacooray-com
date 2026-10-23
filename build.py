@@ -50,7 +50,7 @@ def card(p):
         art = f'<div class="art blank" aria-hidden="true">{KIND[kind(p)]}</div>'
     link = ""
     if p.get("url"):
-        link = f'<a class="open" href="{e(p["url"])}" target="_blank" rel="noopener">{e(p.get("urlLabel", "Open"))} ↗</a>'
+        link = f'<a class="open" href="{e(p["url"])}" target="_blank" rel="noopener">{e(p.get("urlLabel", "Open"))}</a>'
     role = data["roles"][p["role"]]
     return (f'<article class="card">{art}<div class="cbody"><div class="ctop"><h3>{e(p["name"])}</h3>'
             f'<span class="role {p["role"]}">{role}</span></div><p>{e(p["desc"])}</p>'
