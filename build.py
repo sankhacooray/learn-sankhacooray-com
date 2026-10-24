@@ -107,7 +107,7 @@ for i, row in enumerate(rows):
         body = (f'    {head(g)}\n    <div class="cards">{"".join(card(p) for p in g["projects"])}</div>\n')
         groups.append(f'  <section class="{cls}" id="{g["id"]}"><div class="wrap">\n{body}  </div>\n{FOOTER if last else ""}  </section>')
     else:
-        cols = " ".join(f"{len(g['projects'])}fr" for g in row)
+        cols = f"repeat({sum(len(g['projects']) for g in row)},minmax(0,1fr))"  # one equal column per card (symmetry)
         subs = "".join(
             f'<div class="subgroup" id="{g["id"]}" style="--n:{len(g["projects"])}">{head(g, True)}'
             f'<div class="cards">{"".join(card(p) for p in g["projects"])}</div></div>' for g in row)
