@@ -30,15 +30,19 @@
           ],
           "role": "contrib",
           "org": "Augmented Human Lab",
-          "years": "2020–2026"
-        },
-        {
-          "name": "Inquiry API",
-          "desc": "Backend for the Inquiry Editor: Fastify, Prisma and Postgres on Cloud Run.",
-          "plat": [],
-          "role": "contrib",
-          "org": "Augmented Human Lab",
-          "years": "2020–2026"
+          "years": "2020–2026",
+          "parts": [
+            {
+              "name": "Inquiry Editor",
+              "kind": "Teacher-facing web app",
+              "repo": "learn-kiwrious-com"
+            },
+            {
+              "name": "Inquiry API",
+              "kind": "Fastify, Prisma and Postgres backend on Cloud Run",
+              "repo": "api-kiwrious-com"
+            }
+          ]
         },
         {
           "name": "Kiwrious Play",
@@ -156,17 +160,19 @@
           "org": "sankhacooray",
           "url": "https://scratchgpt.sankhacooray.com/",
           "years": "2026",
-          "og": "https://scratchgpt.sankhacooray.com/"
-        },
-        {
-          "name": "Scratch GPT backend",
-          "desc": "The Apps Script service behind it, gated by Google sign-in.",
-          "plat": [
-            "web"
-          ],
-          "role": "mine",
-          "org": "sankhacooray",
-          "years": "2026"
+          "og": "https://scratchgpt.sankhacooray.com/",
+          "parts": [
+            {
+              "name": "Scratch GPT",
+              "kind": "Web app",
+              "repo": "scratch-gpt-html5"
+            },
+            {
+              "name": "Scratch GPT backend",
+              "kind": "Apps Script service gated by Google sign-in",
+              "repo": "scratch-gpt-appscript"
+            }
+          ]
         }
       ]
     },
@@ -186,7 +192,19 @@
           "org": "designthinking-lk",
           "url": "https://designthinking.lk/",
           "years": "2026",
-          "og": "https://designthinking.lk/"
+          "og": "https://designthinking.lk/",
+          "parts": [
+            {
+              "name": "Design Thinking @ SL",
+              "kind": "Participant and mentor platform",
+              "repo": "designthinking-lk"
+            },
+            {
+              "name": "ICE Central",
+              "kind": "API and admin console for running cohorts",
+              "repo": "ice-designthinking-lk"
+            }
+          ]
         },
         {
           "name": "ICE 2025",
@@ -199,16 +217,6 @@
           "thumb": "ice2025.jpg",
           "url": "https://ice2025.designthinking.lk/",
           "years": "2025–2026"
-        },
-        {
-          "name": "ICE Central",
-          "desc": "API and web console for running ICE cohorts.",
-          "plat": [
-            "web"
-          ],
-          "role": "co",
-          "org": "designthinking-lk",
-          "years": "2026"
         },
         {
           "name": "ICEHub",
@@ -224,5 +232,6 @@
     }
   ],
   "yearsNote": "From each project's git history (first to last commit). Kiwrious Play counts only the Kiwrious team's commits on its Scratch fork; the Kiwrious product card spans all Kiwrious repos; ICE 2025 covers the 2025 programme and its 2026 archive; ICE Central has no repo, so its file dates are used.",
-  "thumbsNote": "Cards with an `og` page load that page's current og:image live through the Worker (/api/og), over a shared fallback image. SPARK's og:image is only its logo and ICE 2025 has none, so they keep screenshots. kiwrious.com is down, so its card shows the fallback until the site is back."
+  "thumbsNote": "Cards with an `og` page load that page's current og:image live through the Worker (/api/og), over a shared fallback image. SPARK's og:image is only its logo and ICE 2025 has none, so they keep screenshots. kiwrious.com is down, so its card shows the fallback until the site is back.",
+  "cardsNote": "Cards show only things people use. Backends and earlier versions are listed as parts of their product (hover the parts chip)."
 }

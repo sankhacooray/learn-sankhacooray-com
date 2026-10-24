@@ -53,26 +53,65 @@ def card(p):
         art = f'<div class="art blank" aria-hidden="true">{KIND[kind(p)]}</div>'
     if p.get("years"):
         art = art.replace('">', f'"><span class="yrs" title="Active years, from the project\'s commit history">{e(p["years"])}</span>', 1)
+    parts = ""
+    if p.get("parts"):
+        items = "".join(f'<li>{e(x["name"])}<span>{e(x["kind"])} · <code>{e(x["repo"])}</code></span></li>' for x in p["parts"])
+        names = ", ".join(x["name"] for x in p["parts"])
+        parts = (f'<button class="parts" type="button" aria-label="{len(p["parts"])} parts: {e(names)}">'
+                 '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>'
+                 f'{len(p["parts"])} parts</button><div class="pop" role="tooltip"><b>Built from</b><ul>{items}</ul></div>')
     link = ""
     if p.get("url"):
         link = f'<a class="open" href="{e(p["url"])}" target="_blank" rel="noopener">{e(p.get("urlLabel", "Open"))}</a>'
     role = data["roles"][p["role"]]
     return (f'<article class="card">{art}<div class="cbody"><div class="ctop"><h3>{e(p["name"])}</h3>'
             f'<span class="role {p["role"]}">{role}</span></div><p>{e(p["desc"])}</p>'
-            f'<div class="cfoot"><span class="plats">{plats(p["plat"])}</span><span class="org">{e(p["org"])}</span>{link}</div></div></article>')
+            f'<div class="cfoot"><span class="plats">{plats(p["plat"])}</span><span class="org">{e(p["org"])}</span>{parts}{link}</div></div></article>')
 
 
 FOOTER = open(os.path.join(HERE, "footer.html")).read()
-groups, nav = [], []
-for i, g in enumerate(data["groups"]):
+MAX_ROW = 5  # cards that fit side by side at desktop width (rule 3: no empty areas)
+
+
+def head(g, small=False):
     n = len(g["projects"])
-    last = i == len(data["groups"]) - 1
-    groups.append(
-        f'  <section class="group{" last" if last else ""}" id="{g["id"]}"><div class="wrap">\n'
-        f'    <div class="ghead"><div><h2>{e(g["title"])}</h2><p>{e(g["lede"])}</p></div>'
-        f'<div class="ctx">{e(g["context"])} · <span class="n">{n}</span> project{"s" if n != 1 else ""}</div></div>\n'
-        f'    <div class="cards">{"".join(card(p) for p in g["projects"])}</div>\n'
-        f'  </div>\n{FOOTER if last else ""}  </section>')
+    return (f'<div class="ghead"><div><h2>{e(g["title"])}</h2><p>{e(g["lede"])}</p></div>'
+            f'<div class="ctx">{e(g["context"])} · <span class="n">{n}</span> project{"s" if n != 1 else ""}</div></div>')
+
+
+# Pack consecutive groups into rows of at most MAX_ROW cards, using as few rows as possible and keeping
+# their card counts as even as possible (symmetry), so no screen shows one or two lonely cards.
+from itertools import combinations
+sizes = [len(g["projects"]) for g in data["groups"]]
+best = None
+for k in range(1, len(sizes) + 1):
+    for cuts in combinations(range(1, len(sizes)), k - 1):
+        bounds = [0, *cuts, len(sizes)]
+        rs = [sizes[a:b] for a, b in zip(bounds, bounds[1:])]
+        if any(sum(r) > MAX_ROW and len(r) > 1 for r in rs):
+            continue
+        score = max(sum(r) for r in rs) - min(sum(r) for r in rs)
+        if best is None or score < best[0]:
+            best = (score, bounds)
+    if best:
+        break
+bounds = best[1]
+rows = [data["groups"][a:b] for a, b in zip(bounds, bounds[1:])]
+
+groups, nav = [], []
+for i, row in enumerate(rows):
+    last = i == len(rows) - 1
+    cls = "group" + (" last" if last else "")
+    if len(row) == 1:
+        g = row[0]
+        body = (f'    {head(g)}\n    <div class="cards">{"".join(card(p) for p in g["projects"])}</div>\n')
+        groups.append(f'  <section class="{cls}" id="{g["id"]}"><div class="wrap">\n{body}  </div>\n{FOOTER if last else ""}  </section>')
+    else:
+        cols = " ".join(f"{len(g['projects'])}fr" for g in row)
+        subs = "".join(
+            f'<div class="subgroup" id="{g["id"]}" style="--n:{len(g["projects"])}">{head(g, True)}'
+            f'<div class="cards">{"".join(card(p) for p in g["projects"])}</div></div>' for g in row)
+        groups.append(f'  <section class="{cls} row-group"><div class="wrap"><div class="row" style="grid-template-columns:{cols}">{subs}</div></div>\n{FOOTER if last else ""}  </section>')
 NAV = {"science": "Science", "spark": "Microlearning", "content": "AI content", "children": "Children", "ice": "ICE"}
 for g in data["groups"]:
     nav.append(f'<a href="#{g["id"]}">{NAV.get(g["id"], g["title"])}</a>')
